@@ -28,12 +28,22 @@
 					<td>가격</td>
 					<td>판매자</td>
 				</tr>
-				<tr>
-					<td>상품이미지</td>
-					<td>품질 좋은 상품 A 20% 할인 판매</td>
-					<td>15,000</td>
-					<td>(주)제주대학교</td>
-				</tr>
+				<c:forEach var="item" items="${list}" varStatus="status">
+					<tr>
+						<td>
+						${item.image}
+						</td>
+						<td>
+						${item.name}
+						</td>
+						<td>
+						${item.price}
+						</td>
+						<td>
+						${item.agent}
+						</td>
+					</tr>
+				</c:forEach>
 			</table>
 		</div>
 		<nav>
