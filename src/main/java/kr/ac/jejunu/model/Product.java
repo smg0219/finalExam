@@ -1,18 +1,11 @@
 package kr.ac.jejunu.model;
 
 public class Product {
-	private String image;
+	private Integer id;
 	private String name;
 	private Integer price;
 	private String agent;
 	private String description;
-	
-	public String getImage() {
-		return image;
-	}
-	public void setImage(String image) {
-		this.image = image;
-	}
 	
 	public String getName() {
 		return name;
@@ -40,5 +33,12 @@ public class Product {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
 	}
 }

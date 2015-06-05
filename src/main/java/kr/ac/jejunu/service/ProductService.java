@@ -10,4 +10,6 @@ public interface ProductService {
 	List<Map<String, String>> selectAllProduct(Map<String, String> qParam);
 
 	void save(Product product);
+
+	List<Map<String, String>> findById(Integer id);
 }

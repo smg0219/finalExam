@@ -24,4 +24,9 @@ public class ProductServiceImpl implements ProductService {
 	public List<Map<String, String>> selectAllProduct(Map<String, String> qParam) {
 		return productDao.selectAllProduct(qParam);
 	}
+
+	@Override
+	public List<Map<String, String>> findById(Integer id) {
+		return productDao.findById(id);
+	}
 }

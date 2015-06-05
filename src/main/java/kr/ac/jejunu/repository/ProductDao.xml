@@ -6,9 +6,14 @@
 	<select id="selectAllProduct" resultType="Product">
 		SELECT id, name, price, agent, description FROM productInfo
 	</select>
+	
 	<insert id="insertProduct" parameterType="Product">
 		INSERT INTO productInfo (name, price, agent, description) VALUES (#{name}, #{price}, #{agent}, #{description})
 	</insert>
+	
+	<select id="findById" resultType="Product">
+		SELECT id, name, price, agent, description FROM productInfo WHERE id = #{id} 
+	</select>
 	
 	<!-- 
 	<select id="findAll" resultType="User" >

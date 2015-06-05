@@ -18,6 +18,6 @@ public class ProductSave {
 	public String save(Product product) {
 		productService.save(product);
 		
-		return "redirect:index";
+		return "redirect:loginAfter";
 	}
 }

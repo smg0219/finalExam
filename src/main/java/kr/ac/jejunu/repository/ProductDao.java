@@ -11,4 +11,5 @@ import org.springframework.stereotype.Repository;
 public interface ProductDao {
 	List<Map<String, String>> selectAllProduct(Map<String, String> qParam);
 	void insertProduct(Product product);
+	List<Map<String, String>> findById(Integer id);
 }

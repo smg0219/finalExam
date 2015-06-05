@@ -47,6 +47,16 @@ public class ProductList {
 	public String registration() {
 		return "registration";
 	}
+
+	@RequestMapping("/loginAfter")
+	public Model loginAfter(Model model) {
+		
+		Map<String, String> qParam = new HashMap<String, String>();
+		List<Map<String, String>> list = this.productService.selectAllProduct(qParam);
+		model.addAttribute("list", list);
+		
+		return model;
+	}
 	
 	/*
 	@Autowired
