@@ -17,7 +17,8 @@
 	<body>
 		<div class="btn-group" role="group" aria-label="...">
 			<button type="button" class="btn btn-default">서민기님 안녕하세요.</button>
-			<button type="button" class="btn btn-default">상품등록</button>
+			<a href="./registration" class="btn btn-info" role="button">상품등록</a>
+			<!-- button type="button" class="btn btn-default">상품등록</button -->
 			<button type="button" class="btn btn-default">로그아웃</button>
 		</div>
 		<div id="contents" class="panel panel-default">

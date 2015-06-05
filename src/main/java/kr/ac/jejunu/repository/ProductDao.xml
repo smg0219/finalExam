@@ -4,8 +4,11 @@
 <mapper namespace="kr.ac.jejunu.repository.ProductDao">
 
 	<select id="selectAllProduct" resultType="Product">
-		SELECT image, name, price, agent FROM productInfo
+		SELECT id, name, price, agent, description FROM productInfo
 	</select>
+	<insert id="insertProduct" parameterType="Product">
+		INSERT INTO productInfo (name, price, agent, description) VALUES (#{name}, #{price}, #{agent}, #{description})
+	</insert>
 	
 	<!-- 
 	<select id="findAll" resultType="User" >

@@ -23,16 +23,12 @@
 			<div class="panel-heading"></div>
 			<table class="table">
 				<tr>
-					<td>상품이미지</td>
 					<td>상품명</td>
 					<td>가격</td>
 					<td>판매자</td>
 				</tr>
 				<c:forEach var="item" items="${list}" varStatus="status">
 					<tr>
-						<td>
-						${item.image}
-						</td>
 						<td>
 						${item.name}
 						</td>

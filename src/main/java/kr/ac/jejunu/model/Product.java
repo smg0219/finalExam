@@ -5,6 +5,7 @@ public class Product {
 	private String name;
 	private Integer price;
 	private String agent;
+	private String description;
 	
 	public String getImage() {
 		return image;
@@ -32,5 +33,12 @@ public class Product {
 	}
 	public void setAgent(String agent) {
 		this.agent = agent;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }
