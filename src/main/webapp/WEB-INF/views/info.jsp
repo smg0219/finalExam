@@ -18,8 +18,9 @@
 		<c:forEach var="item" items="${list}" varStatus="status">
 			<div class="btn-group" role="group" aria-label="...">
 				<button type="button" class="btn btn-default">${item.name}</button>
-				<button type="button" class="btn btn-default">목록</button>
-				<button type="button" class="btn btn-default">수정</button>
+				<a href="./loginAfter"><button type="button" class="btn btn-default">목록</button></a>
+				<a href="./registrationModify?id=${item.id}"><button type="button" class="btn btn-default">수정</button></a>
+				<a href="./productDelete?id=${item.id}"><button type="button" class="btn btn-default">삭제</button></a>
 			</div>
 			<div class="row">
 				<div class="col-sm-6 col-md-4">
@@ -34,7 +35,8 @@
 			</div>
 			<span>가격 : ${item.price}원</span><br/>
 			<span>판매자 : ${item.agent}</span><br/>
-			<button type="button" class="btn btn-default">구매</button>
+			<a href="./kart?id=${item.id}" class="btn btn-default">구매</a>
+			<!-- button type="button" class="btn btn-default">구매</button -->
 		</c:forEach>
 	</body>
 </html>

@@ -58,6 +58,34 @@ public class ProductList {
 		return model;
 	}
 	
+	@RequestMapping("/info")
+	public Model info(@RequestParam(value = "id") Integer id, Model model) {
+		
+		Map<String, String> qParam = new HashMap<String, String>();
+		List<Map<String, String>> list = this.productService.findById(id);
+		model.addAttribute("list", list);
+		
+		return model;
+	}
+
+	@RequestMapping("/registrationModify")
+	public Model modifyInfoView(@RequestParam(value = "id") Integer id, Model model) {
+		
+		Map<String, String> qParam = new HashMap<String, String>();
+		List<Map<String, String>> list = this.productService.findById(id);
+		model.addAttribute("list", list);
+		
+		return model;
+	}
+	
+	@RequestMapping("/productDelete")
+	public String productDelete(@RequestParam(value = "id") String id) {
+		
+		productService.delete(id);
+		
+		return "redirect:loginAfter";
+	}
+	
 	/*
 	@Autowired
 	private ProductDao productDao;

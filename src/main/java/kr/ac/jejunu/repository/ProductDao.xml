@@ -15,6 +15,18 @@
 		SELECT id, name, price, agent, description FROM productInfo WHERE id = #{id} 
 	</select>
 	
+	<update id="modify" parameterType="Product">
+		UPDATE productInfo SET name = #{name}, price = #{price}, description = #{description} where id = #{id}
+	</update>
+	
+	<delete id="deleteProduct">
+		DELETE FROM productInfo WHERE id = #{id}
+	</delete>
+
+	<!-- insert id="insertKart">
+		INSERT INTO productKart (productId, userId) VALUES (#{})
+	</insert -->
+	
 	<!-- 
 	<select id="findAll" resultType="User" >
 		select 

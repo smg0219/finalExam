@@ -12,4 +12,10 @@ public interface ProductService {
 	void save(Product product);
 
 	List<Map<String, String>> findById(Integer id);
+
+	void modify(Product product);
+
+	void kart(String id);
+
+	void delete(String id);
 }

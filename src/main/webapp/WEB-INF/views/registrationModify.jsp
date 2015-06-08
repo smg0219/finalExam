@@ -15,34 +15,49 @@
 		<!-- Bootstrap end -->
 	</head>
 	<body>
-		<div class="btn-group" role="group" aria-label="...">
-			<button type="button" class="btn btn-default">(주)제주대학교님의 상품</button>
-		</div>
-
-		<div class="input-group">
-			<span class="input-group-addon">상품 이미지</span>
-			<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-			<span class="input-group-addon">찾아보기</span>
-		</div>
-
-		<div class="input-group">
-			<span class="input-group-addon" id="basic-addon1">상품명</span>
-			<input type="text" class="form-control" placeholder="상품명 등록" aria-describedby="basic-addon1">
-		</div>
-
-		<div class="input-group">
-			<span class="input-group-addon" id="basic-addon1">가격</span>
-			<input type="text" class="form-control" placeholder="가격 등록" aria-describedby="basic-addon1">
-		</div>
-
-		<div class="input-group">
-			<span class="input-group-addon" id="basic-addon1">상품 상세 설명</span>
-			<input type="text" class="form-control" placeholder="상품 상세 설명 등록" aria-describedby="basic-addon1">
-		</div>
-
-		<div class="btn-group" role="group" aria-label="...">
-			<button type="button" class="btn btn-default">등록</button>
-			<button type="button" class="btn btn-default">취소</button>
-		</div>
+		<form action="modify" method="post">
+			<c:forEach var="item" items="${list}" varStatus="status">
+				<!-- div class="btn-group" role="group" aria-label="...">
+					<button type="button" name="agent" value="${item.agent}" class="btn btn-default">${item.agent}</button>
+				</div -->
+		
+				<!-- div class="input-group">
+					<span class="input-group-addon">상품 이미지</span>
+					<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+					<span class="input-group-addon">찾아보기</span>
+				</div -->
+				
+				<div>
+					<input type="hidden" name="id" value="${item.id}">
+				</div>
+				
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1">판매자</span>
+					<input type="text" name="agent" class="form-control" placeholder="${item.agent}" value="${item.agent}" aria-describedby="basic-addon1" readonly="readonly">
+				</div>
+				
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1">상품명</span>
+					<input type="text" name="name" class="form-control" placeholder="${item.name}" value="${item.name}" aria-describedby="basic-addon1">
+				</div>
+		
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1">가격</span>
+					<input type="text" name="price" class="form-control" placeholder="${item.price}" value="${item.price}" aria-describedby="basic-addon1">
+				</div>
+		
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1">상품 상세 설명</span>
+					<input type="text" name="description" class="form-control" placeholder="${item.description}" value="${item.description}" aria-describedby="basic-addon1">
+				</div>
+		
+				<div class="btn-group" role="group" aria-label="...">
+					<input type="submit" class="btn btn-info" value="수정">
+					<a href="./info?id=${item.id}" class="btn btn-info" role="button">취소</a>
+					<!-- button type="button" class="btn btn-default">수정</button>
+					<button type="button" class="btn btn-default">취소</button -->
+				</div>
+			</c:forEach>
+		</form>
 	</body>
 </html>

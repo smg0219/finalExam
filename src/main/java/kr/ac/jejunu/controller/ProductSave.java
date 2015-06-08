@@ -16,6 +16,7 @@ public class ProductSave {
 	
 	@RequestMapping
 	public String save(Product product) {
+		
 		productService.save(product);
 		
 		return "redirect:loginAfter";

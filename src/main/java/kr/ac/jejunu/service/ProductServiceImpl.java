@@ -29,4 +29,19 @@ public class ProductServiceImpl implements ProductService {
 	public List<Map<String, String>> findById(Integer id) {
 		return productDao.findById(id);
 	}
+
+	@Override
+	public void modify(Product product) {
+		productDao.modify(product);
+	}
+
+	@Override
+	public void kart(String id) {
+		productDao.insertKart(id);
+	}
+
+	@Override
+	public void delete(String id) {
+		productDao.deleteProduct(id);
+	}
 }
