@@ -20,4 +20,13 @@ public class UserServiceImpl implements UserService {
 		return userDao.findAll();
 	}
 
+	@Override
+	public void insertUser(User user) {
+		userDao.insertUser(user);
+	}
+
+	@Override
+	public User certificationUser(String email) {
+		return userDao.certificationUser(email);
+	}
 }

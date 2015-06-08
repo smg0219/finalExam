@@ -11,4 +11,7 @@ public interface UserDao {
 
 	List<User> findAll();
 
+	void insertUser(User user);
+
+	User certificationUser(String email);
 }

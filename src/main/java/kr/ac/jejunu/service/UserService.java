@@ -8,4 +8,7 @@ public interface UserService {
 
 	java.util.List<User> list();
 
+	void insertUser(User user);
+
+	User certificationUser(String email);
 }

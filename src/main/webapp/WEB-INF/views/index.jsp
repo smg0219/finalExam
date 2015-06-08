@@ -16,8 +16,10 @@
 	</head>
 	<body>
 		<div class="btn-group" role="group" aria-label="...">
-		  <button type="button" class="btn btn-default">회원가입</button>
-		  <button type="button" class="btn btn-default">로그인</button>
+			<a href="./signUp" class="btn btn-info" role="button">회원가입</a>
+			<a href="./signIn" class="btn btn-info" role="button">로그인</a>
+			<!-- button type="button" class="btn btn-default">회원가입</button>
+			<button type="button" class="btn btn-default">로그인</button -->
 		</div>
 		<div id="contents" class="panel panel-default">
 			<div class="panel-heading"></div>
