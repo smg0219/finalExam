@@ -23,36 +23,8 @@ public class ProductModify {
 	@RequestMapping
 	public String modify(Product product) {
 
-		System.out.println(product.getId());
-		System.out.println(product.getPrice());
-		System.out.println(product.getName());
-		System.out.println(product.getAgent());
-		System.out.println(product.getDescription());
-		
 		productService.modify(product);
 		
 		return "redirect:info?id=" + product.getId();
 	}
-	
-	/*
-	@RequestMapping("/info")
-	public Model info(@RequestParam(value = "id") Integer id, Model model) {
-		
-		Map<String, String> qParam = new HashMap<String, String>();
-		List<Map<String, String>> list = this.productService.findById(id);
-		model.addAttribute("list", list);
-		
-		return model;
-	}
-
-	@RequestMapping("/registrationModify")
-	public Model modifyInfoView(@RequestParam(value = "id") Integer id, Model model) {
-		
-		Map<String, String> qParam = new HashMap<String, String>();
-		List<Map<String, String>> list = this.productService.findById(id);
-		model.addAttribute("list", list);
-		
-		return model;
-	}
-	*/
 }

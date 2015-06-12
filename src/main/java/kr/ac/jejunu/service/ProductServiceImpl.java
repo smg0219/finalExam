@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import kr.ac.jejunu.model.Kart;
 import kr.ac.jejunu.model.Product;
 import kr.ac.jejunu.repository.ProductDao;
 
@@ -36,12 +37,23 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public void kart(String id) {
-		productDao.insertKart(id);
+	public void delete(String id) {
+		productDao.deleteProduct(id);
 	}
 
 	@Override
-	public void delete(String id) {
-		productDao.deleteProduct(id);
+	public Product productFindById(Integer id) {
+		return productDao.productFindById(id);
+	}
+
+	@Override
+	public void insertKart(Kart kart) {
+		productDao.insertKart(kart);
+	}
+
+	@Override
+	public List<Map<String, String>> selectKart(Map<String, String> qParam,
+			Kart kart) {
+		return productDao.selectKart(qParam, kart);
 	}
 }

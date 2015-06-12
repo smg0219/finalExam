@@ -17,7 +17,7 @@
 	<body>
 		<form action="save" method="post">
 			<div class="btn-group" role="group" aria-label="...">
-				<button type="button" class="btn btn-default">${sessionScope.company.name}</button>
+				<button type="button" class="btn btn-default">${sessionScope.company.name}님의 상품</button>
 			</div>
 	
 			<!-- div class="input-group">

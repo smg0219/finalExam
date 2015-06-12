@@ -23,20 +23,4 @@ public class UserInfo {
 	public String signIn() {
 		return "signIn";
 	}
-
-	/*
-	@RequestMapping("/redirectSignInPage")
-	public String redirectSignInPage(User user) {
-	
-		System.out.println(user.getId());
-		System.out.println(user.getName());
-		System.out.println(user.getPassword());
-		System.out.println(user.getGender());
-		System.out.println(user.getAuthority());
-		
-		userService.insertUser(user);
-		
-		return "redirect:signIn";
-	}
-	*/
 }

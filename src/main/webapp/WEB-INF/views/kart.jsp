@@ -16,26 +16,34 @@
 	</head>
 	<body>
 		<div class="btn-group" role="group" aria-label="...">
-		  <button type="button" class="btn btn-default">회원가입</button>
-		  <button type="button" class="btn btn-default">로그인</button>
+		  ${sessionScope.company.name}님의 장바구니
 		</div>
 		<div id="contents" class="panel panel-default">
 			<div class="panel-heading"></div>
+			<c:set var="sum"></c:set>
 			<table class="table">
 				<tr>
-					<td>상품이미지</td>
 					<td>상품명</td>
 					<td>가격</td>
 					<td>판매자</td>
 					<td>주문 여부</td>
 				</tr>
-				<tr>
-					<td>상품이미지</td>
-					<td>품질 좋은 상품 A 20% 할인 판매</td>
-					<td>15,000</td>
-					<td>(주)제주대학교</td>
-					<td><button type="button" class="btn btn-default">주문 취소</button></td>
-				</tr>
+				<c:forEach var="item" items="${list}" varStatus="status">
+					<tr>
+						<td>
+						${item.name}
+						</td>
+						<td>
+						${item.price}
+						</td>
+						<td>
+						${item.agent}
+						</td>
+						<td>
+						<a href="#?id=${item.id}"><button type="button" class="btn btn-default">삭제</button></a>
+						</td>
+					</tr>
+				</c:forEach>
 			</table>
 		</div>
 		<div>
