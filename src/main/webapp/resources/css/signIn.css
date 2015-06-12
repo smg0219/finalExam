@@ -24,12 +24,24 @@ a {
   color: #eee;
   outline: 0;
   text-decoration: none;
+  text-align: center;
 }
 a:focus, a:hover {
   text-decoration: underline;
 }
 
 input {
+  border: 0;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  -webkit-transition: background-color .3s;
+          transition: background-color .3s;
+}
+
+a {
   border: 0;
   color: inherit;
   font: inherit;
@@ -51,6 +63,9 @@ input {
 .form input[type="password"], .form input[type="text"], .form input[type="submit"] {
   width: 100%;
 }
+.form a {
+  width: 100%;
+}
 .form--login {
   color: #606468;
 }
@@ -58,6 +73,10 @@ input {
 .form--login input[type="text"],
 .form--login input[type="password"],
 .form--login input[type="submit"] {
+  border-radius: 0.25rem;
+  padding: 1rem;
+}
+.form--login a {
   border-radius: 0.25rem;
   padding: 1rem;
 }
@@ -83,6 +102,15 @@ input {
   text-transform: uppercase;
 }
 .form--login input[type="submit"]:focus, .form--login input[type="submit"]:hover {
+  background-color: #d44179;
+}
+.form--login a {
+  background-color: #ea4c88;
+  color: #eee;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.form--login a:focus, .form--login a:hover {
   background-color: #d44179;
 }
 .form__field {

@@ -8,6 +8,18 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd	
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">        
 	<context:component-scan base-package="kr.ac.jejunu" />
+
+	<interceptors>
+		<interceptor>
+			<mapping path="/loginAfter"/>
+			<beans:bean class="kr.ac.jejunu.interceptor.Interceptor" />
+		</interceptor>
+	</interceptors>
+	
+	<!-- interceptors>
+		<beans:bean class="kr.ac.jejunu.interceptor.Interceptor" />
+	</interceptors -->
+	
 	<annotation-driven/>
 	<resources mapping="/**" location="/" />
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

@@ -35,7 +35,7 @@
 					</div> 
 				<p>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p>
 				<input type="submit" class="button" value="SignUp">
-				<!-- a href="./insert" class="button">SignUp</a -->
+				<a href="./index" class="button">Cancel</a>
 			</form>
 		</div>
 	</body>

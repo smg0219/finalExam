@@ -22,6 +22,10 @@
 					<div class="form__field">
 						<input type="submit" value="Sign In">
 					</div>
+					<div class="form__field">
+						<a href="./index">Cancel</a>
+						<!-- input type="submit" value="Sign In" -->
+					</div>
 				</form>
 			<p class="text--center">Not a member? <a href="./signUp">Sign up now</a> <span class="fontawesome-arrow-right"></span></p>
 			</div>

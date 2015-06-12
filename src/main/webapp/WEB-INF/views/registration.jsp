@@ -17,7 +17,7 @@
 	<body>
 		<form action="save" method="post">
 			<div class="btn-group" role="group" aria-label="...">
-				<button type="button" class="btn btn-default">(주)제주대학교님의 상품</button>
+				<button type="button" class="btn btn-default">${sessionScope.company.name}</button>
 			</div>
 	
 			<!-- div class="input-group">
@@ -30,6 +30,10 @@
 				<span class="input-group-addon" id="basic-addon1">판매자</span>
 				<input type="text" name="agent" class="form-control" placeholder="판매자" aria-describedby="basic-addon1">
 			</div>
+			
+			<!-- div>
+				<input type="hidden" name="agent" value="${item.agent}">
+			</div -->
 	
 			<div class="input-group">
 				<span class="input-group-addon" id="basic-addon1">상품명</span>

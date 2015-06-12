@@ -19,6 +19,6 @@ public class UserInsert {
 		
 		userService.insertUser(user);
 		
-		return "redirect:signIn";
+		return "redirect:index";
 	}
 }

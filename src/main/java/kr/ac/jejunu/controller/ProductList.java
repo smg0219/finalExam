@@ -58,8 +58,28 @@ public class ProductList {
 		return model;
 	}
 	
+	@RequestMapping("/loginAfterPersonal")
+	public Model loginAfterPersonal(Model model) {
+		
+		Map<String, String> qParam = new HashMap<String, String>();
+		List<Map<String, String>> list = this.productService.selectAllProduct(qParam);
+		model.addAttribute("list", list);
+		
+		return model;
+	}
+	
 	@RequestMapping("/info")
 	public Model info(@RequestParam(value = "id") Integer id, Model model) {
+		
+		Map<String, String> qParam = new HashMap<String, String>();
+		List<Map<String, String>> list = this.productService.findById(id);
+		model.addAttribute("list", list);
+		
+		return model;
+	}
+	
+	@RequestMapping("/infoPersonal")
+	public Model infoPersonal(@RequestParam(value = "id") Integer id, Model model) {
 		
 		Map<String, String> qParam = new HashMap<String, String>();
 		List<Map<String, String>> list = this.productService.findById(id);
