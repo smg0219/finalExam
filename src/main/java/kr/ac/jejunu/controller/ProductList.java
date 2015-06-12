@@ -7,7 +7,12 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import kr.ac.jejunu.model.Kart;
 import kr.ac.jejunu.model.Product;
+import kr.ac.jejunu.model.User;
 import kr.ac.jejunu.repository.ProductDao;
 import kr.ac.jejunu.service.ProductService;
 
@@ -104,5 +109,58 @@ public class ProductList {
 		productService.delete(id);
 		
 		return "redirect:loginAfter";
+	}
+	
+	@RequestMapping("/deleteKartList")
+	public String deleteKartList(HttpServletRequest req, @RequestParam(value = "id") Integer id) {
+		
+		HttpSession session = req.getSession();
+		User user = (User) session.getAttribute("company");
+		User user2 = (User) session.getAttribute("personal");
+		String url = "redirect:";
+		
+		if (user != null)
+			url += "kart";
+		else
+			url += "kartPersonal";
+		productService.deleteKartList(id);
+		
+		return url;
+	}
+	
+	@RequestMapping("/insertKart")
+	public String kart(HttpServletRequest req, @RequestParam(value = "id") Integer id) {
+
+		HttpSession session = req.getSession();
+		User user = (User) session.getAttribute("company");
+		User user2 = (User) session.getAttribute("personal");
+		Kart kart = new Kart();
+		String url = "redirect:";
+		
+		Product product = productService.productFindById(id);
+		kart.setProductId(product.getId());
+		
+		if (user != null) {
+			kart.setUserId(user.getId());
+			url += "kart";
+		} else {
+			kart.setUserId(user2.getId());
+			url += "kartPersonal";
+		}
+		productService.insertKart(kart);
+		
+		return url;
+	}
+	
+	@RequestMapping("/kartPersonal")
+	public Model kart(HttpServletRequest req, Model model) {
+
+		HttpSession session = req.getSession();
+		User user = (User) session.getAttribute("personal");
+		Map<String, String> qParam = new HashMap<String, String>();
+		List<Map<String, String>> list = productService.selectKartFindById(qParam, user.getId());
+		model.addAttribute("list", list);
+		
+		return model;
 	}
 }

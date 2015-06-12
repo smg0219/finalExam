@@ -16,9 +16,9 @@
 	</head>
 	<body>
 		<div class="btn-group" role="group" aria-label="...">
-			${sessionScope.company.name}님의 장바구니
+			${sessionScope.personal.name}님의 장바구니
 		</div>
-		<a href="./loginAfter"><button type="button" class="btn btn-default">목록</button></a>
+		<a href="./loginAfterPersonal"><button type="button" class="btn btn-default">목록</button></a>
 		<div id="contents" class="panel panel-default">
 			<div class="panel-heading"></div>
 			<table class="table">

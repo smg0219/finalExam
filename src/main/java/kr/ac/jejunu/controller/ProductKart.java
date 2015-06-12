@@ -26,25 +26,12 @@ public class ProductKart {
 	private ProductService productService;
 	
 	@RequestMapping
-	public Model kart(HttpServletRequest req, @RequestParam(value = "id") Integer id, Model model) {
+	public Model kart(HttpServletRequest req, Model model) {
 
 		HttpSession session = req.getSession();
 		User user = (User) session.getAttribute("company");
-		User user2 = (User) session.getAttribute("personal");
-		Kart kart = new Kart();
-		
-		Product product = productService.productFindById(id);
-		kart.setProductId(product.getId());
-		
-		if (user != null)
-			kart.setUserId(user.getId());
-		else
-			kart.setUserId(user2.getId());
-		
-		productService.insertKart(kart);
-		
 		Map<String, String> qParam = new HashMap<String, String>();
-		List<Map<String, String>> list = this.productService.selectKart(qParam, kart);
+		List<Map<String, String>> list = productService.selectKartFindById(qParam, user.getId());
 		model.addAttribute("list", list);
 		
 		return model;

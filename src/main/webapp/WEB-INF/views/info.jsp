@@ -35,7 +35,7 @@
 			</div>
 			<span>가격 : ${item.price}원</span><br/>
 			<span>판매자 : ${item.agent}</span><br/>
-			<a href="./kart?id=${item.id}" class="btn btn-default">구매</a>
+			<a href="./insertKart?id=${item.id}" class="btn btn-default">구매</a>
 			<!-- button type="button" class="btn btn-default">구매</button -->
 		</c:forEach>
 	</body>

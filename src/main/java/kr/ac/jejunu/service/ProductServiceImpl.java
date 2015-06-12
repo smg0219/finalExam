@@ -56,4 +56,14 @@ public class ProductServiceImpl implements ProductService {
 			Kart kart) {
 		return productDao.selectKart(qParam, kart);
 	}
+
+	@Override
+	public void deleteKartList(Integer id) {
+		productDao.deleteKartList(id);
+	}
+
+	@Override
+	public List<Map<String, String>> selectKartFindById(Map<String, String> qParam, Integer id) {
+		return productDao.selectKartFindById(id);
+	}
 }

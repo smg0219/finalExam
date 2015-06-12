@@ -19,4 +19,6 @@ public interface ProductDao {
 	Product productFindById(Integer id);
 	void insertKart(Kart kart);
 	List<Map<String, String>> selectKart(Map<String, String> qParam, Kart kart);
+	void deleteKartList(Integer id);
+	List<Map<String, String>> selectKartFindById(Integer id);
 }

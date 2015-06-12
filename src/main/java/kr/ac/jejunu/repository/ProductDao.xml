@@ -34,6 +34,14 @@
 	<select id="selectKart" resultType="Product">
 		SELECT p.id, p.name, p.price, p.agent, p.description FROM productInfo p inner join kartInfo k on p.id = k.productId inner join userInfo u on u.id = k.userId
 	</select>
+	
+	<delete id="deleteKartList">
+		DELETE FROM kartInfo WHERE productId = #{productId}
+	</delete>
+	
+	<select id="selectKartFindById" resultType="Product">
+		SELECT p.id, p.name, p.price, p.agent, p.description FROM productInfo p WHERE p.id IN (SELECT k.productId FROM kartInfo k WHERE k.userId = #{id})
+	</select>
 
 	<!-- insert id="insertKart">
 		INSERT INTO productKart (productId, userId) VALUES (#{})

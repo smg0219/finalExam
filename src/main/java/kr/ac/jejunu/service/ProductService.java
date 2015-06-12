@@ -23,4 +23,8 @@ public interface ProductService {
 	void insertKart(Kart kart);
 
 	List<Map<String, String>> selectKart(Map<String, String> qParam, Kart kart);
+
+	void deleteKartList(Integer id);
+
+	List<Map<String, String>> selectKartFindById(Map<String, String> qParam, Integer id);
 }
